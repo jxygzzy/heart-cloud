@@ -1,0 +1,77 @@
+# 应用服务 WEB 访问端口
+server:
+  port: 8082
+
+
+spring:
+  application:
+    name: heart-cloud
+  # 数据库
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    name: defaultDataSource
+    url: jdbc:mysql://203.6.231.61:3306/heart-cloud?serverTimezone=UTC
+    username: heart-cloud
+    password: 123456
+  # redis配置
+  redis:
+    # Redis数据库索引（默认为0）
+    database: 1
+    # Redis服务器地址
+    host: 203.6.231.61
+    # Redis服务器连接端口
+    port: 6379
+    # Redis服务器连接密码（默认为空）
+    password: heartcloudredis
+    # 连接超时时间
+    timeout: 10s
+    lettuce:
+      pool:
+        # 连接池最大连接数
+        max-active: 200
+        # 连接池最大阻塞等待时间（使用负值表示没有限制）
+        max-wait: -1ms
+        # 连接池中的最大空闲连接
+        max-idle: 10
+        # 连接池中的最小空闲连接
+        min-idle: 0
+
+
+# Sa-Token配置
+sa-token:
+  # token名称 (同时也是cookie名称)
+  token-name: heart-token
+  # token有效期，单位s 默认30天, -1代表永不过期
+  timeout: 2592000
+  # token临时有效期 (指定时间内无操作就视为token过期) 单位: 秒
+  activity-timeout: -1
+  # 是否允许同一账号并发登录 (为true时允许一起登录, 为false时新登录挤掉旧登录)
+  is-concurrent: true
+  # 在多人登录同一账号时，是否共用一个token (为true时所有登录共用一个token, 为false时每次登录新建一个token)
+  is-share: false
+  # token风格
+  token-style: uuid
+  # 是否输出操作日志
+  is-log: false
+  # sa-token-temp-jwt 模块的秘钥
+  jwt-secret-key: heart-secret
+
+#mybatis-plus
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+  mapper-locations: classpath:mapper/*.xml
+logging:
+  level:
+    com.heartcloud.mapper: debug
+
+qiniu:
+  accessKey: EVmS6sY7STDCwq9Iw79geJEJalk2h0k4ql4r0V4s
+  secretKey: Pp_AtsasRqDwfE6ClVIKlkKsNesWmHjK0Zqu3ouU
+  bucket: heart-cloud-driver
+  path: https://upload-z2.qiniup.com/
+  download: rbtk097xo.hn-bkt.clouddn.com
+  expireSeconds: 1800
+
+sharePrefix: http://localhost:8080/share

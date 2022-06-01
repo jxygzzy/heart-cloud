@@ -1,0 +1,179 @@
+*:not([class*="el-"]) {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  word-break: break-all;
+  line-height: inherit;
+  word-wrap: break-word;
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  font-style: inherit;
+  border: 0;
+  outline: none; }
+
+ul,
+ol,
+li,
+dl,
+dd,
+dt {
+  list-style: none;
+  list-style-type: none; }
+
+input,
+textarea {
+  -webkit-appearance: none;
+  appearance: none;
+  background: none; }
+
+textarea {
+  font-family: inherit;
+  resize: none;
+  background: none; }
+
+input[type='button'],
+button {
+  cursor: pointer;
+  -moz-user-focus: none;
+  user-select: none;
+  background: none; }
+
+input[type='text'],
+input[type='password'] {
+  width: 100%; }
+
+a,
+i,
+a:hover {
+  text-decoration: none;
+  cursor: pointer; }
+
+table {
+  border-collapse: collapse; }
+
+img,
+label {
+  cursor: pointer; }
+
+.n-layout {
+  display: flex;
+  align-items: center;
+  align-items: stretch;
+  width: 100vw;
+  height: 100vh; }
+  .n-layout > aside {
+    width: 270px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    background: #f5f5f6; }
+    .n-layout > aside > h3 {
+      height: 120px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #555;
+      font-weight: bold;
+      font-size: 20px; }
+      .n-layout > aside > h3 > img {
+        width: 30px;
+        margin-right: 10px; }
+    .n-layout > aside .n-layout-menu {
+      height: 0;
+      flex: 1; }
+      .n-layout > aside .n-layout-menu > li {
+        cursor: pointer;
+        font-size: 17px;
+        color: #555;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        padding-left: 70px; }
+        .n-layout > aside .n-layout-menu > li > i {
+          margin-right: 10px; }
+        .n-layout > aside .n-layout-menu > li:hover {
+          background: #eee; }
+      .n-layout > aside .n-layout-menu .n-layout-menu-cur {
+        color: #409EFF; }
+    .n-layout > aside > footer {
+      height: 90px;
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+      border-top: 1px solid #ddd; }
+      .n-layout > aside > footer > img {
+        width: 40px;
+        height: 40px;
+        object-fit: cover;
+        margin-right: 10px;
+        font-size: 17px;
+        color: #999; }
+      .n-layout > aside > footer .el-dropdown {
+        margin-left: auto; }
+        .n-layout > aside > footer .el-dropdown .el-icon-setting {
+          font-size: 17px; }
+  .n-layout > article {
+    flex: 1;
+    width: 0;
+    overflow: auto; }
+
+.n-login {
+  height: 100vh;
+  background: url(../../../assets/login.jpg) no-repeat center/cover;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 10vw; }
+  .n-login .n-login-form {
+    width: 350px;
+    position: relative;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 30px 40px; }
+    .n-login .n-login-form .n-login-tabs {
+      margin-bottom: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      .n-login .n-login-form .n-login-tabs > li {
+        height: 50px;
+        flex: 0 0 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 16px;
+        color: #ccc;
+        cursor: pointer; }
+      .n-login .n-login-form .n-login-tabs .n-login-tabs-cur {
+        border-bottom: 2px solid #409EFF;
+        color: #409EFF; }
+    .n-login .n-login-form > div {
+      color: #fff; }
+      .n-login .n-login-form > div > * {
+        display: block;
+        width: 100%; }
+      .n-login .n-login-form > div .el-input {
+        margin-bottom: 20px;
+        border: 0;
+        color: inherit; }
+        .n-login .n-login-form > div .el-input input {
+          background: none;
+          color: inherit; }
+        .n-login .n-login-form > div .el-input .el-input__prefix, .n-login .n-login-form > div .el-input .el-input__suffix {
+          color: inherit; }
+      .n-login .n-login-form > div > button {
+        height: 36px;
+        color: #fff;
+        border-radius: 3px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 15px;
+        background: #409EFF; }
+
+.n-admin {
+  padding: 20px; }
+  .n-admin .el-pagination {
+    text-align: right;
+    margin-top: 20px; }

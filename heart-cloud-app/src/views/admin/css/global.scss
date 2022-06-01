@@ -1,0 +1,288 @@
+*:not([class*="el-"]) {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	word-break: break-all;
+	line-height: inherit;
+	word-wrap: break-word;
+	color: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+	font-style: inherit;
+	border: 0; 
+	outline: none;
+}
+
+ul,
+ol,
+li,
+dl,
+dd,
+dt {
+	list-style: none;
+	list-style-type: none
+}
+
+input,
+textarea {
+	-webkit-appearance: none;
+	appearance: none;
+	background: none;
+}
+
+textarea {
+	font-family: inherit;
+	resize: none;
+	background: none;
+}
+
+input[type='button'],
+button {
+	cursor: pointer;
+	-moz-user-focus: none;
+	user-select: none;
+	background: none;
+}
+
+input[type='text'],
+input[type='password'] {
+	width: 100%;
+}
+
+a,
+i,
+a:hover {
+	text-decoration: none;
+	cursor: pointer;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+img,
+label {
+	cursor: pointer;
+}
+
+
+
+
+@mixin n-row1 {
+	display: flex;
+	align-items: center;
+}
+
+@mixin n-row2 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@mixin n-row3 {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+@mixin n-row4 {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+@mixin n-row5 {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+@mixin n-col1 {
+	display: flex;
+	flex-direction: column;
+}
+
+@mixin n-col2 {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+
+@mixin n-col3 {
+	display: flex;
+	justify-content: flex-end;
+	flex-direction: column;
+}
+
+@mixin n-col4 {
+	display: flex;
+	justify-content: space-around;
+	flex-direction: column;
+}
+
+@mixin n-col5 {
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+}
+
+@mixin n-center {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+$c:#409EFF;
+
+.n-layout {
+	@include n-row1;
+	align-items: stretch;
+	width: 100vw;
+	height: 100vh;
+	>aside{
+		width: 270px;
+		@include n-col1;
+		align-items: stretch;
+		background: rgb(245, 245, 246);
+		>h3{
+			height: 120px;
+			@include n-row2;
+			color: #555;
+			font-weight: bold;
+			font-size: 20px;
+			>img{
+				width: 30px;
+				margin-right: 10px;
+			}
+		}
+		.n-layout-menu{
+			height: 0;
+			flex: 1;
+			>li{
+				cursor: pointer;
+				font-size: 17px;
+				color: #555;
+				height: 50px;
+				@include n-row1;
+				padding-left: 70px;
+				>i{
+					margin-right: 10px;
+				}
+				&:hover{
+					background: #eee;
+				}
+			}
+			.n-layout-menu-cur{
+				color: $c;
+			}
+			
+		}
+		>footer{
+			height: 90px;
+			@include n-row1;
+			padding: 0 20px;
+			border-top: 1px solid #ddd;
+			>img{
+				width: 40px;
+				height: 40px;
+				object-fit: cover;
+				margin-right: 10px;
+				font-size: 17px;
+				color: #999;
+			}
+			.el-dropdown{
+				margin-left: auto;
+				.el-icon-setting{
+					font-size: 17px;
+				}
+			}
+		}
+	}
+	>article{
+		flex:1;
+		width: 0;
+		overflow: auto;
+	}
+	
+	
+}
+
+
+
+
+
+.n-login{
+	
+	height: 100vh;
+	background: url(../../../assets/login.jpg) no-repeat center/cover;
+	@include n-row3;
+	padding-right: 10vw;
+	.n-login-form{
+		width: 350px;
+		position: relative;
+		background: rgba(0,0,0,0.5);
+		border-radius: 10px;
+		padding: 30px 40px;
+		.n-login-tabs{
+			margin-bottom: 30px;
+			@include n-row2;
+			>li{
+				height: 50px;
+				flex: 0 0 50%;
+				@include n-row2;
+				font-size: 16px;
+				color: #ccc;
+				cursor: pointer;
+			}
+			.n-login-tabs-cur{
+				border-bottom: 2px solid $c;
+				color: $c;
+			}
+		}
+		>div{
+			color:#fff;
+			>*{
+				display:block;
+				width: 100%;
+			}
+			.el-input{
+				margin-bottom: 20px;
+				border: 0;
+				color: inherit;
+				input{
+					background: none;
+					color: inherit;
+					 
+				}
+				.el-input__prefix, .el-input__suffix{
+					color: inherit;
+				}
+				
+			}
+			>button{
+				height: 36px;
+				color: #fff;
+				border-radius: 3px;
+				@include n-row2;
+				font-size: 15px;
+				background: $c;
+			}
+		}
+		
+	}
+	
+}
+
+
+
+.n-admin{
+	padding: 20px;
+		
+	.el-pagination{
+		text-align: right;
+		margin-top: 20px;
+	}
+}
+
+
