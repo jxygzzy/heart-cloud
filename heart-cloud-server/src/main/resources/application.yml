@@ -67,8 +67,8 @@ logging:
     com.heartcloud.mapper: debug
 
 qiniu:
-  accessKey: EVmS6sY7STDCwq9Iw79geJEJalk2h0k4ql4r0V4s
-  secretKey: Pp_AtsasRqDwfE6ClVIKlkKsNesWmHjK0Zqu3ouU
+  accessKey: xxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  secretKey: xxxxxxxxxxxxxxxxxxxxxxxxxxxx
   bucket: heart-cloud-driver
   path: https://upload-z2.qiniup.com/
   download: rbtk097xo.hn-bkt.clouddn.com
